@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  media: MyString
+  description: MyString
+  listing_type: MyString
+  sqft: MyString
+  price: MyString
+
+two:
+  name: MyString
+  location: MyString
+  media: MyString
+  description: MyString
+  listing_type: MyString
+  sqft: MyString
+  price: MyString
