@@ -1,0 +1,2 @@
+class Constructionsitesworker < ApplicationRecord
+end

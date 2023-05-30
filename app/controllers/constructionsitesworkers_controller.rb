@@ -1,0 +1,2 @@
+class ConstructionsitesworkersController < ApplicationController
+end

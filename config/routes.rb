@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :constructionsitesworkers
+  resources :agents
+  resources :staffs
   resources :progresses
   resources :subactivities
   resources :activities
