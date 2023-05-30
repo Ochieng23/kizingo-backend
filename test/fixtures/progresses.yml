@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subactivity_id: 1
+  progress_percentage: MyString
+  progress_date: 2023-05-30
+
+two:
+  subactivity_id: 1
+  progress_percentage: MyString
+  progress_date: 2023-05-30

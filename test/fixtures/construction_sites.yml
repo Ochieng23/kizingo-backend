@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  media: MyString
+  inventory_id: 1
+  staff_id: 1
+  machinery_id: 1
+  legal_id: 1
+  start_date: 2023-05-30
+  end_date: 2023-05-30
+  status: MyString
+
+two:
+  name: MyString
+  description: MyText
+  media: MyString
+  inventory_id: 1
+  staff_id: 1
+  machinery_id: 1
+  legal_id: 1
+  start_date: 2023-05-30
+  end_date: 2023-05-30
+  status: MyString

@@ -1,0 +1,2 @@
+class Subactivity < ApplicationRecord
+end

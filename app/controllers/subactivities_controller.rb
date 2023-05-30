@@ -1,0 +1,2 @@
+class SubactivitiesController < ApplicationController
+end

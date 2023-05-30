@@ -1,0 +1,2 @@
+class HouseSeeker < ApplicationRecord
+end
