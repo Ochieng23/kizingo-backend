@@ -2,7 +2,7 @@ class AuthController < ApplicationController
     skip_before_action :authenticate_user
     # Log in action=> Generates access token
     def login
-      user = User.find_by(username: params[:email])
+      user = User.find_by(email: params[:email])
       if user && user.authenticate(params[:password])
         # Generate token
         token = generate_token(user)
