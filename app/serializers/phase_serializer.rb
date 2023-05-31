@@ -1,3 +1,3 @@
 class PhaseSerializer < ActiveModel::Serializer
-  attributes :id, :name, :project_id
+  attributes :id, :name, :construction_site_id
 end

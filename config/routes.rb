@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :inventories
   resources :constructionsitesworkers
   resources :agents
   resources :staffs
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   resources :admins
   resources :properties
   resources :users
+  post '/login', to: 'auth#login'
+  post '/register', to: 'user#register'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
