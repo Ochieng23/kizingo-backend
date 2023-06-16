@@ -19,7 +19,7 @@ class AuthController < ApplicationController
   # Generate JWT token
   def generate_token(user)
     # Set expiration time to 1 hour from now
-    expiration = 1.hour.from_now.to_i
+    expiration = 24.hours.from_now.to_i
   
     # Assign a default role if the user role is not present or invalid
     role = user.role || "house_seeker"

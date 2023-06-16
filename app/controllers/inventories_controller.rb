@@ -1,5 +1,7 @@
 class InventoriesController < ApplicationController
-  before_action :set_inventory, only: %i[ show update destroy ]
+  
+  before_action :set_property, only: %i[ show update destroy ]
+  before_action :authenticate_user, only: [:create, :update, :destroy]
 
   # GET /inventories
   def index
@@ -47,5 +49,33 @@ class InventoriesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def inventory_params
       params.require(:inventory).permit(:name, :brand, :status, :quantity, :construction_site_id, :suppliers, :suppliers_contact)
+    end
+
+    def authenticate_user
+      
+      header = request.headers['Authorization']
+      token = header.split(' ').last if header
+
+      if token
+        
+        decoded_token = JWT.decode(token, Rails.application.credentials.secret_key_base)
+        
+        if decoded_token[0]['exp'] < Time.now.to_i
+          render json: { error: 'Token has expired' }, status: :unauthorized
+        else
+          
+          user_role = decoded_token[0]['role']
+          user_reference = decoded_token[0]['user_ref']
+
+          @current_user = User.find_by(user_code: user_reference)
+
+  
+          if @current_user.nil? || user_role != 'admin'
+            render json: { error: 'Unauthorized' }, status: :unauthorized
+          end
+        end
+      else
+        render json: { error: 'Token not provided' }, status: 403
+      end
     end
 end
