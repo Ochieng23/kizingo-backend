@@ -47,9 +47,17 @@ class ConstructionSitesController < ApplicationController
     end
   
     # Only allow a list of trusted parameters through.
-    def construction_site_params
-      params.require(:construction_site).permit( :name, :description, :media, :start_date, :end_date, :status)
-    end
+   def construction_site_params
+  params.require(:construction_site).permit(
+    :name,
+    :description,
+    :start_date,
+    :end_date,
+    :status,
+    architecturalDesign: [], # Permit an array of URLs for architecturalDesign
+    currentProgress: [] # Permit an array of URLs for currentProgress
+  )
+end
 
     def authenticate_user
       
